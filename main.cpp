@@ -144,7 +144,20 @@ public:
 
    void reverselist(){
         //TODO:Write a function to reverse the list using the logic from the slide.
+        Node<T>* prev = nullptr;
+        Node<T>* curr = head;
+        Node<T>* next = nullptr;
 
+        while (curr != NULL)
+        {
+            next = curr->next; //saves next node
+            curr->next = prev; //reverses the current NEXTS poitner
+            prev = curr; //set prev to current node
+            curr = next; //set curr to next node
+
+        }
+
+        head = prev; //simiply swapping heads/tail
     }
 
     void print() {
